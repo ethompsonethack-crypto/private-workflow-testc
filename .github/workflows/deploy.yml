@@ -1,0 +1,15 @@
+name: Deploy to Protected Environment
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Deploy
+        run: |
+          echo "Deploying to production environment"
+          echo "This should require approval!"
